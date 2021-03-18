@@ -45,7 +45,6 @@ function purchaseClicked() {
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
-    document.getElementsByClassName('count')[0].innerText = 0
     updatecarttotal()
 }
 function removecartitem(event){
@@ -88,7 +87,7 @@ function addItemToCart(title, price, imageSrc){
        
         if (cartItemsNames[i].innerText == title){
             
-            window.alert('This item is already add to the cart')
+            window.alert('This item is already add to the cart, Click the cart to see your order :)')
                         
               
             return           
