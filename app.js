@@ -51,8 +51,7 @@ function removecartitem(event){
     var buttonclicked = event.target
     buttonclicked.parentElement.parentElement.parentElement.remove()
     --sum
-    document.getElementsByClassName('count')[0].innerText = Number(sum)  
-    
+  
     updatecarttotal()
 }
 
@@ -87,14 +86,14 @@ function addItemToCart(title, price, imageSrc){
        
         if (cartItemsNames[i].innerText == title){
             
-            window.alert('This item is already add to the cart, Click the cart to see your order :)')
+            window.alert('This item is already add to the cart')
                         
               
             return           
         }
     }
    
-    window.alert('ADD TO CART!')
+    window.alert('ADD TO CART! , Click the cart to see your order :)')
     // window.alert('This Item add to cart!')
     var cartRowContents = `
     <div class="cart-item cart-column">
