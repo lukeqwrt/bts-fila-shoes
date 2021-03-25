@@ -25,12 +25,7 @@ function ready() {
       
         button.addEventListener('click', addToCartClicked)
       
-        button.addEventListener('click', () => {
-                    sum++
-                    document.getElementsByClassName('count')[0].innerText = Number(sum)        
-                        
-            
-        })
+     
         
     }
     
@@ -66,18 +61,17 @@ function quantityChanged(event){
 function addToCartClicked(event){
     var button = event.target
     var shopItem = button.parentElement.parentElement.parentElement
-    console.log(shopItem)
+    // console.log(shopItem)
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('_cardimg')[0].src
-    
-    console.log(title, price, imageSrc)
+ 
+
+    // console.log(title, price, imageSrc)
     addItemToCart(title, price, imageSrc)
     updatecarttotal()
 }
 function addItemToCart(title, price, imageSrc){
-    
-
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
     var cartItems = document.getElementsByClassName('cart-items')[0]
@@ -88,13 +82,15 @@ function addItemToCart(title, price, imageSrc){
             
             window.alert('This item is already add to the cart')
                         
-              
             return           
         }
     }
-   
-    window.alert('ADD TO CART! , Click the cart to see your order :)')
+    window.alert('ADD TO CART! Click the cart to see your order :)')
     // window.alert('This Item add to cart!')
+
+    // then remove the modal
+    sara()
+
     var cartRowContents = `
     <div class="cart-item cart-column">
     
@@ -114,6 +110,9 @@ function addItemToCart(title, price, imageSrc){
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('btn-remove')[0].addEventListener('click', removecartitem)
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+
+    
+
 }
 
 
