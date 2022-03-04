@@ -134,7 +134,8 @@ margin: 3px;
 }
 .sidebar-main{
   height: 100%;
-  width: 0px;
+  width: 350px;
+  margin-right: -350px;
   background: white;
   position: fixed;
   right: 0;
@@ -144,13 +145,14 @@ margin: 3px;
   /* grid */
   display: grid;
   grid-template-rows: 60px 1fr;
+
 }
 
 .sidebar-main.show-sidebar{
-  width: 340px;
+  width: 350px;
   visibility: visible;
   opacity: 1;
-  transition: all 0.3s ease-in-out;
+  margin-right: 0px;
 }
 
 .sidebar-main .close{
@@ -158,7 +160,7 @@ margin: 3px;
   height: 60px;
   width: 100px;
   position: absolute;
-  right: 10px;
+  right: 30px;
 
   /* flex */
   display: flex;
